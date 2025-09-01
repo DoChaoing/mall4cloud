@@ -42,7 +42,7 @@ services:
 
 
   mall4cloud-nacos:
-    image: registry.cn-hongkong.aliyuncs.com/mall4j-images/nacos-server:v2.3.2
+    image: nacos/nacos-server:v2.4.0-slim
     container_name: mall4cloud-nacos
     restart: always
     depends_on:
@@ -118,7 +118,7 @@ services:
 
 
   mall4cloud-rocketmq-namesrv:
-    image: registry.cn-hongkong.aliyuncs.com/mall4j-images/rocketmq:5.2.0
+    image: apache/rocketmq:5.3.1
     container_name: mall4cloud-rocketmq-namesrv
     restart: always
     network_mode: "host"
@@ -132,7 +132,7 @@ services:
     command: ["sh","mqnamesrv"]
 
   mall4cloud-rocketmq-broker:
-    image: registry.cn-hongkong.aliyuncs.com/mall4j-images/rocketmq:5.2.0
+    image: apache/rocketmq:5.3.1
     container_name: mall4cloud-rocketmq-broker
     restart: always
     network_mode: "host"
@@ -151,7 +151,7 @@ services:
 
 
   mall4cloud-rocketmq-dashboard:
-    image: registry.cn-hongkong.aliyuncs.com/mall4j-images/rocketmq-dashboard:1.0.1
+    image: apacherocketmq/rocketmq-dashboard:2.0.1
     container_name: mall4cloud-rocketmq-dashboard
     restart: always
     ports:
